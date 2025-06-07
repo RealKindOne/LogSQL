@@ -38,5 +38,5 @@ if [ ! -f logSQLite.buildconfig ]; then
 	chmod 755 logSQLite.buildconfig
 fi
 
-LDFLAGS="-L $SQLITE/lib -lsqlite3 -I $SQLITE/include" "$ZNCBUILD" logsqlite.cpp
+LDFLAGS="-L $SQLITE/lib -lsqlite3 -I $SQLITE/include" LIBS="-lsqlite3" "$ZNCBUILD" logsqlite.cpp
 cp logsqlite.so "$ZNCCONFIG/modules/logsqlite.so"
